@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -17,7 +18,7 @@ return new class extends Migration
             $table->id('id');
             $table->foreignId('kategoria')->references('id')->on('kategoriaks');
             $table->string('leiras');
-            $table->date('hirdetesDatuma')->default(date('Y-m-d'));
+            $table->date('hirdetesDatuma')->default(Date::now());
             $table->boolean('tehermentes');
             $table->integer('ar');
             $table->string('kepUrl');
