@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2023. Ápr 27. 11:31
+-- Létrehozás ideje: 2023. Ápr 27. 12:26
 -- Kiszolgáló verziója: 10.4.27-MariaDB
 -- PHP verzió: 8.2.0
 
@@ -56,6 +56,16 @@ CREATE TABLE `ingatlanoks` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- A tábla adatainak kiíratása `ingatlanoks`
+--
+
+INSERT INTO `ingatlanoks` (`id`, `Kategória`, `Leírás`, `Hírdetés dátuma`, `Tehermentes`, `ar`, `Fénykép`, `created_at`, `updated_at`) VALUES
+(2, 1, 'Kertvárosi részén, egyszintes házat kínálunk nyugodt környezetben, nagy telken.', '2022-03-14', 1, 76000000, 'alma', NULL, NULL),
+(3, 1, 'Belvárosi környezetben, árnyékos helyen kis méretű családi ház eladó. Tömegközlekedéssel könnyen megközelíthető', '2022-03-21', 1, 54000000, 'körte', NULL, NULL),
+(4, 2, 'Kétszintes berendezett lakás a belvárosban kiadó', '2022-03-17', 1, 46000000, 'banán', NULL, NULL),
+(5, 5, 'hatalmas zöld terület eladó', '2023-04-01', 0, 28000000, 'zöld mező', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -218,7 +228,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT a táblához `ingatlanoks`
 --
 ALTER TABLE `ingatlanoks`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT a táblához `kategoriaks`
