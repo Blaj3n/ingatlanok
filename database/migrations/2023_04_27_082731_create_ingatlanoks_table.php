@@ -14,7 +14,13 @@ return new class extends Migration
     public function up()
     {
         Schema::create('ingatlanoks', function (Blueprint $table) {
-            $table->id();
+            $table->id('id');
+            $table->foreignId('kategoria')->references('id')->on('kategoriaks');
+            $table->string('leiras');
+            $table->date('hirdetesDatuma')->default(date('Y-m-d'));
+            $table->boolean('tehermentes');
+            $table->integer('ar');
+            $table->string('kepUrl');
             $table->timestamps();
         });
     }
