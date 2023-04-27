@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Ingatlanok;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Date;
@@ -16,12 +17,12 @@ return new class extends Migration
     {
         Schema::create('ingatlanoks', function (Blueprint $table) {
             $table->id('id');
-            $table->foreignId('kategoria')->references('id')->on('kategoriaks');
-            $table->string('leiras');
-            $table->date('hirdetesDatuma')->default(Date::now());
-            $table->boolean('tehermentes');
+            $table->foreignId('Kategória')->references('id')->on('kategoriaks');
+            $table->string('Leírás');
+            $table->date('Hírdetés dátuma')->default(Date::now());
+            $table->boolean('Tehermentes')->default(0);
             $table->integer('ar');
-            $table->string('kepUrl');
+            $table->string('Fénykép');
             $table->timestamps();
         });
     }
