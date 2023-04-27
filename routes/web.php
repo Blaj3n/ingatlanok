@@ -19,23 +19,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
-
-
-Route::middleware(['user'])->group(function () {
-    //kategoriaks
-    Route::get('api/kategoriaks', [KategoriakController::class, 'index']);
-    Route::get('api/kategoriaks/{id}', [KategoriakController::class, 'show']);
-    Route::post('api/kategoriaks', [KategoriakController::class, 'store']);
-    Route::put('api/kategoriaks/{id}', [KategoriakController::class, 'update']);
-    Route::delete('api/kategoriaks/{id}', [KategoriakController::class, 'destroy']);
-    //ingatlanoks
-    Route::get('api/ingatlanoks', [IngatlanokController::class, 'index']);
-    Route::get('api/ingatlanoks/{id}', [IngatlanokController::class, 'show']);
-    Route::post('api/ingatlanoks', [IngatlanokController::class, 'store']);
-    Route::put('api/ingatlanoks/{id}', [IngatlanokController::class, 'update']);
-    Route::delete('api/ingatlanoks/{id}', [IngatlanokController::class, 'destroy']);
-});
-require __DIR__ . '/auth.php';
+//kategoriaks
+Route::get('api/kategoriaks', [KategoriakController::class, 'index']);
+Route::get('api/kategoriaks/{id}', [KategoriakController::class, 'show']);
+Route::post('api/kategoriaks', [KategoriakController::class, 'store']);
+Route::put('api/kategoriaks/{id}', [KategoriakController::class, 'update']);
+Route::delete('api/kategoriaks/{id}', [KategoriakController::class, 'destroy']);
+//ingatlanoks
+Route::get('api/ingatlanoks', [IngatlanokController::class, 'index']);
+Route::get('api/ingatlanoks/{id}', [IngatlanokController::class, 'show']);
+Route::post('api/ingatlanoks', [IngatlanokController::class, 'store']);
+Route::put('api/ingatlanoks/{id}', [IngatlanokController::class, 'update']);
+Route::delete('api/ingatlanoks/{id}', [IngatlanokController::class, 'destroy']);
