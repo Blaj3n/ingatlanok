@@ -19,15 +19,9 @@ Route::get('/', function () {
     return view('index');
 });
 
-//kategoriaks
-Route::get('api/kategoriaks', [KategoriakController::class, 'index']);
-Route::get('api/kategoriaks/{id}', [KategoriakController::class, 'show']);
-Route::post('api/kategoriaks', [KategoriakController::class, 'store']);
-Route::put('api/kategoriaks/{id}', [KategoriakController::class, 'update']);
-Route::delete('api/kategoriaks/{id}', [KategoriakController::class, 'destroy']);
 //ingatlanoks
-Route::get('api/ingatlanoks', [IngatlanokController::class, 'index']);
-Route::get('api/ingatlanoks/{id}', [IngatlanokController::class, 'show']);
-Route::post('api/ingatlanoks', [IngatlanokController::class, 'store']);
-Route::put('api/ingatlanoks/{id}', [IngatlanokController::class, 'update']);
-Route::delete('api/ingatlanoks/{id}', [IngatlanokController::class, 'destroy']);
+Route::get('/ingatlanoks', [IngatlanokController::class, 'index']);
+Route::get('/ingatlanoks/{id}', [IngatlanokController::class, 'show']);
+Route::post('/ingatlanoks', [IngatlanokController::class, 'store']);
+Route::put('/ingatlanoks/{id}', [IngatlanokController::class, 'update']);
+Route::delete('/ingatlanoks/{id}', [IngatlanokController::class, 'destroy']);
