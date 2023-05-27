@@ -17,14 +17,14 @@ return new class extends Migration
     {
         Schema::create('ingatlanoks', function (Blueprint $table) {
             $table->id('id');
-            $table->foreignId('Kategória')->references('id')->on('kategoriaks');
-            $table->string('Leírás');
-            $table->date('Hírdetés dátuma')->default(Date::now());
-            $table->boolean('Tehermentes')->default(0);
+            $table->foreignId('kategoria')->references('id')->on('kategoriaks');
+            $table->string('leiras');
+            $table->date('hirdetes_datuma')->default(Date::now());
+            $table->boolean('tehermentes')->default(0);
             $table->integer('ar');
-            $table->string('Fénykép');
+            $table->string('fenykep');
             $table->timestamps();
-        });
+        });   
     }
 
     /**
